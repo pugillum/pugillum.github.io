@@ -3,12 +3,12 @@ layout: true
 
 ---
 
-# You can use it
+# Yes
 
 ---
 
-# on a tablet
+# we have no
 
 ---
 
-![](tenor.gif)
+# bananas
