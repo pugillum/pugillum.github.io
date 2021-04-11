@@ -163,16 +163,14 @@ This is an article I once wrote to demonstrate Pelican setup
 <h2>The theme tune</h2>
 <p>So at this point you could already publish your site but it's highly likely you'll want to integrate some themes. The themes can be seen in all their glory <a href="http://www.pelicanthemes.com/">here</a>.  This is the part that I got a bit lost and ended up hard-coding a solution:</p>
 <ol>
-<li>Clone the pelican-themes repo by running this in the root of your project:</li>
-</ol>
-<p><code>sh
-   git clone --recursive https://github.com/getpelican/pelican-themes themes</code></p>
-<ol>
-<li>In the <code>pelicanconf.py</code> file add:</li>
-</ol>
-<p><code>python
-   THEME = 'themes/[Name of a theme that looks good]'</code></p>
-<ol>
+<li>
+<p>Clone the pelican-themes repo by running this in the root of your project:</br>
+   <code>git clone --recursive https://github.com/getpelican/pelican-themes themes</code></p>
+</li>
+<li>
+<p>In the <code>pelicanconf.py</code> file add:</br>
+   <code>THEME = 'themes/[Name of a theme that looks good]'</code></p>
+</li>
 <li>
 <p>Run <code>make devserver</code>. </p>
 </li>
@@ -197,13 +195,12 @@ This is an article I once wrote to demonstrate Pelican setup
 <p>add a <code>favicon.ico</code> file in the <code>content/images</code> folder will ensure it's available in the <code>output</code> folder but linking to it is dependent on the theme. For some one can add a reference to it in the <code>pelicanconf.py</code> file.</p>
 </li>
 <li>
-<p>to ensure correct relative URLs, I had to specify the following in <code>pelicanconf.py</code>:</p>
+<p>to ensure correct relative URLs, I had to specify the following in <code>pelicanconf.py</code>:</br>
+  <code>SITEURL = 'http://127.0.0.1:8000'</code></p>
 </li>
-</ul>
-<p><code>python
-  SITEURL = 'http://127.0.0.1:8000'</code></p>
-<ul>
-<li>What I haven't really covered here is the structuring of your files in content and things like the use of tags and categories.  I advise reading up on these in the documentation</li>
+<li>
+<p>What I haven't really covered here is the structuring of your files in content and things like the use of tags and categories.  I advise reading up on these in the documentation</p>
+</li>
 </ul>
 <h2>Publishing</h2>
 <p>So once you have the look you want, you'll want to publish.  This turned out to be a bit fiddly for me as I am maintaining the code in a repository separate from the one configured for Github pages.  </p>
