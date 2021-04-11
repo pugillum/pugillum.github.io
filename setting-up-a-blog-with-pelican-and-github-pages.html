@@ -17,13 +17,13 @@
 
     <meta property="og:type" content="article"/>
     <meta property="og:title" content="Setting up a blog with Pelican and Github Pages"/>
-    <meta property="og:description" content="This is about how this blog was setup using Pelican and Github Pages. I anticipate refining this process so will keep this page updated with an improvements made along the way. Why Github Pages Basically: - it&#39;s free - I already use Github for most of my projects - Endless customisation options - it&#39;s …"/>
+    <meta property="og:description" content="This is about how this blog was setup using Pelican and Github Pages. I anticipate refining this process so will keep this page updated with any future improvements. About the tech choice: Why Github Pages? it&#39;s free content is all mine I already use Github for most of my projects …"/>
     <meta property="og:site_name" content="Pugillum" />
     <meta property="og:url" content="https://pugillum.github.io/setting-up-a-blog-with-pelican-and-github-pages.html"/>
 
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Setting up a blog with Pelican and Github Pages">
-    <meta name="twitter:description" content="This is about how this blog was setup using Pelican and Github Pages. I anticipate refining this process so will keep this page updated with an improvements made along the way. Why Github Pages Basically: - it&#39;s free - I already use Github for most of my projects - Endless customisation options - it&#39;s …">
+    <meta name="twitter:description" content="This is about how this blog was setup using Pelican and Github Pages. I anticipate refining this process so will keep this page updated with any future improvements. About the tech choice: Why Github Pages? it&#39;s free content is all mine I already use Github for most of my projects …">
     <meta name="twitter:url" content="https://pugillum.github.io/setting-up-a-blog-with-pelican-and-github-pages.html">
 
     <!-- Feed -->
@@ -86,14 +86,171 @@
 
     <div class="col-main w3-container">
         <section id="content">
-            <p>This is about how this blog was setup using Pelican and Github Pages. I anticipate refining this process so will keep this page updated with an improvements made along the way.</p>
-<h2>Why Github Pages</h2>
-<p>Basically:
-- it's free
-- I already use Github for most of my projects
-- Endless customisation options - it's a static site, HTML, CSS and JavaScript FTW</p>
-<h2>Why Pelican</h2>
-<p>So if you follow the tutorial on setting up Github pages you'll notice that the preferred site generation uses Jekyll.  Jekyll is a nice option, particularly in terms of the themes available.</p>
+            <p>This is about how this blog was setup using Pelican and Github Pages. I anticipate refining this process so will keep this page updated with any future improvements.</p>
+<h2>About the tech choice:</h2>
+<h3>Why <a href="https://pages.github.com/">Github Pages</a>?</h3>
+<ul>
+<li>it's free</li>
+<li>content is all mine</li>
+<li>I already use Github for most of my projects (including the ones I get paid for)</li>
+<li>one can tinker with the HTML, CSS and JavaScript</li>
+</ul>
+<h3>Why <a href="https://blog.getpelican.com/">Pelican</a>?</h3>
+<p>So if you follow the tutorial on setting up Github Pages you'll notice that the recommended site generation tool is <a href="https://jekyllrb.com/">Jekyll</a>.  </p>
+<p>Jekyll is a nice option, easy to setup quickly and with a ton of nice template options.  But it's written in Ruby (<a href="https://archive.is/1tjTP">by Tom Preston-Werner</a>, cofounder of Github no less) and since I work primarily in Python, I thought to check for a Python option, which led me to Pelican.</p>
+<p>Like Jekyll, Pelican allows one to create articles in <a href="https://daringfireball.net/projects/markdown/">Markdown</a> and I love Markdown (light, renders beautifully, perfect for version control)</p>
+<p>Some other notable features:
+- a bunch of <a href="https://github.com/getpelican/pelican-themes">theme options</a> (with <a href="http://jinja.pocoo.org/">Jinja</a> customization options)
+- a bunch of <a href="https://github.com/getpelican/pelican-plugins">plugin options</a></p>
+<h2>Project Setup</h2>
+<p>Setup is fairly simple:</p>
+<ul>
+<li>create your Python environment (I use <a href="https://github.com/pyenv/pyenv-virtualenv">pyenv-virtualenv</a>)</li>
+<li>install a package <code>pip install pelican[markdown]</code>*</li>
+</ul>
+<h4>Quick Start</h4>
+<p>Run <code>pelican-quickstart</code> which will take you through a list of questions to determine your setup requirements and then generate your project</p>
+<p>My answers looked something like this:</p>
+<div class="highlight"><pre><span></span><code>&gt; Where <span class="k">do</span> you want to create your new web site? <span class="o">[</span>.<span class="o">]</span> 
+&gt; What will be the title of this web site? Awesome Aquaintances
+&gt; Who will be the author of this web site? Awesome Rob
+&gt; What will be the default language of this web site? <span class="o">[</span>en<span class="o">]</span> 
+&gt; Do you want to specify a URL prefix? e.g., https://example.com   <span class="o">(</span>Y/n<span class="o">)</span> n
+&gt; Do you want to <span class="nb">enable</span> article pagination? <span class="o">(</span>Y/n<span class="o">)</span> n
+&gt; What is your <span class="nb">time</span> zone? <span class="o">[</span>Europe/Paris<span class="o">]</span> 
+&gt; Do you want to generate a tasks.py/Makefile to automate generation and publishing? <span class="o">(</span>Y/n<span class="o">)</span> Y
+&gt; Do you want to upload your website using FTP? <span class="o">(</span>y/N<span class="o">)</span> N
+&gt; Do you want to upload your website using SSH? <span class="o">(</span>y/N<span class="o">)</span> N
+&gt; Do you want to upload your website using Dropbox? <span class="o">(</span>y/N<span class="o">)</span> N
+&gt; Do you want to upload your website using S3? <span class="o">(</span>y/N<span class="o">)</span> N
+&gt; Do you want to upload your website using Rackspace Cloud Files? <span class="o">(</span>y/N<span class="o">)</span> N
+&gt; Do you want to upload your website using GitHub Pages? <span class="o">(</span>y/N<span class="o">)</span> y
+&gt; Is this your personal page <span class="o">(</span>username.github.io<span class="o">)</span>? <span class="o">(</span>y/N<span class="o">)</span> y
+</code></pre></div>
+
+<p>The resulting files:</p>
+<div class="highlight"><pre><span></span><code>.
+├── Makefile
+├── content
+├── output
+├── pelicanconf.py
+├── publishconf.py
+└── tasks.py
+</code></pre></div>
+
+<p>Add a file <code>article.md</code> to the folder <code>content</code> containing the following:</p>
+<div class="highlight"><pre><span></span><code>Title: This is my article
+Date: 2020-12-03 10:20
+Category: bla
+
+This is an article I once wrote to demonstrate Pelican setup
+</code></pre></div>
+
+<p>To generate some HTML run <code>make html</code> and check the contents of the <code>output</code> folder.</p>
+<p>To serve your site run <code>make devserver</code> and navigate to the listed URL in your browser (standard is http://127.0.0.1:8000).  You should see something like this:</p>
+<p><img alt="image-20210411150912929" src="images/2021-04-10_this_blog/image-20210411150912929.png"></p>
+<blockquote>
+<p>It's probably not surprising to know that Pelican has some <a href="https://docs.getpelican.com/en/4.6.0/quickstart.html#">Quickstart instructions</a>.  There are also some community supported <a href="https://github.com/getpelican/pelican/wiki/Tutorials">Tutorials</a>.  They're worth looking at.</p>
+</blockquote>
+<h4>What's happening?</h4>
+<p>In the <code>output</code> folder you should see the file <code>this-is-my-article.html</code> which is the file generated from the contents of <code>article.md</code>.  As you can see in the HTML file, the article has been wrapped with additional styled HTML which is determined by the theme choice.</p>
+<p>Compare what you see in the display page with the contents of <code>pelicanconf.py</code> and it should be evident how to change what is displayed in the <em>links</em> and <em>social</em> sections.</p>
+<blockquote>
+<p>You will likely see warnings about a missing path and favicon, I'll cover this later</p>
+</blockquote>
+<p>The <code>make html</code> builds your site.  The <code>make devserver</code> builds your site <strong>and</strong> hosts it <strong>and</strong> refreshes if you make changes. </p>
+<p><img alt="image-20210411154804143" src="images/2021-04-10_this_blog/image-20210411154804143.png"></p>
+<h2>The theme tune</h2>
+<p>So at this point you could already publish your site but it's highly likely you'll want to integrate some themes. The themes can be seen in all their glory <a href="http://www.pelicanthemes.com/">here</a>.  This is the part that I got a bit lost and ended up hard-coding a solution:</p>
+<ol>
+<li>Clone the pelican-themes repo by running this in the root of your project:</li>
+</ol>
+<p><code>sh
+   git clone --recursive https://github.com/getpelican/pelican-themes themes</code></p>
+<ol>
+<li>In the <code>pelicanconf.py</code> file add:</li>
+</ol>
+<p><code>python
+   THEME = 'themes/[Name of a theme that looks good]'</code></p>
+<ol>
+<li>
+<p>Run <code>make devserver</code>. </p>
+</li>
+<li>
+<p>Mess around with different themes until you find the perfect one.</p>
+</li>
+<li>
+<p>Copy that theme into a folder <code>theme</code> and change the <code>THEME</code> variable to reference it.</p>
+</li>
+</ol>
+<h4>The non hard-coding option</h4>
+<p>Okay, so there is a <code>pelican-themes</code> <a href="https://docs.getpelican.com/en/4.6.0/pelican-themes.html#">CLI</a> which allows you to install different themes and one can then specify the theme path using <code>pelican -t THEME</code>.  But since I want to tinker I went with my option.  Do as you feel led 😉</p>
+<h4>More themes</h4>
+<p>So different themes have different consequences for the rendering of your site.  Each one usually includes a <code>README.md</code> and I would recommend reading it to ensure optimal configuration.  </p>
+<h2>Other bits</h2>
+<p>Here are some other configuration changes I made:</p>
+<ul>
+<li>
+<p>added an <code>images</code> folder to <code>content</code> -&gt; this will remove the <code>path does not exist</code> warning</p>
+</li>
+<li>
+<p>add a <code>favicon.ico</code> file in the <code>content/images</code> folder will ensure it's available in the <code>output</code> folder but linking to it is dependent on the theme. For some one can add a reference to it in the <code>pelicanconf.py</code> file.</p>
+</li>
+<li>
+<p>to ensure correct relative URLs, I had to specify the following in <code>pelicanconf.py</code>:</p>
+</li>
+</ul>
+<p><code>python
+  SITEURL = 'http://127.0.0.1:8000'</code></p>
+<ul>
+<li>What I haven't really covered here is the structuring of your files in content and things like the use of tags and categories.  I advise reading up on these in the documentation</li>
+</ul>
+<h2>Publishing</h2>
+<p>So once you have the look you want, you'll want to publish.  This turned out to be a bit fiddly for me as I am maintaining the code in a repository separate from the one configured for Github pages.  </p>
+<blockquote>
+<p>Before launching into this, make sure to adjust the <code>SITEURL</code> value in the <code>publishconf.py</code> to ensure your HTML isn't littered with 127.0.0.1:8000</p>
+</blockquote>
+<p>There is a <a href="https://docs.getpelican.com/en/latest/tips.html#publishing-to-github">section in the Pelican documentation</a> focussed specifically on publishing to Github (in this context we're talking about <em>User Pages</em> and not <em>Project Pages</em>).  There's an explanation on how to publish to the root of the same repo if that's what you'd prefer to do.</p>
+<p>But this is what I did:</p>
+<ol>
+<li><code>pip install ghp-import</code> (<code>ghp-import</code> copies a folder to a branch, more <a href="https://github.com/c-w/ghp-import">here</a>)</li>
+<li>Run <code>ghp-import output -b gh-pages</code></li>
+<li>Run <code>git push [your repo's SSH address] gh-pages:master</code></li>
+</ol>
+<p>I then ran into issues because my <code>gh-pages</code> branch was out of sync with the <code>master</code> branch of my repo.  To remedy that I ran the following:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># check out the gh-pages branch</span>
+git checkout -b gh-pages
+
+<span class="c1"># add the remote repo and update (fill in your repo details)</span>
+git remote add &lt;repo-name&gt; git@github.com:xxx/&lt;repo-name&gt;.git 
+git remote update
+
+<span class="c1"># merge master with gh-pages</span>
+git merge --allow-unrelated-histories &lt;repo-name&gt;/master
+</code></pre></div>
+
+<p>And then reran the push.</p>
+<h4>Makefile magic</h4>
+<p>And then lastly, I made some adjustments to the Makefile so that I could publish with just a <code>make github</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="c"># fill in your repo details</span>
+<span class="nv">BLOG_REPO</span><span class="o">=</span>git@github.com:xxx/&lt;repo-name&gt;.git
+<span class="nv">GITHUB_PAGES_BRANCH</span><span class="o">=</span>gh-pages
+
+<span class="nf">github</span><span class="o">:</span> <span class="n">publish</span>
+    ghp-import <span class="s2">&quot;</span><span class="k">$(</span>OUTPUTDIR<span class="k">)</span><span class="s2">&quot;</span> -b <span class="k">$(</span>GITHUB_PAGES_BRANCH<span class="k">)</span>
+    git push <span class="k">$(</span>BLOG_REPO<span class="k">)</span> <span class="k">$(</span>GITHUB_PAGES_BRANCH<span class="k">)</span>:master
+</code></pre></div>
+
+<h2>Final thoughs and improvements</h2>
+<p>So this still feels a bit janky and I will endeavour to tighten it up in the future.</p>
+<p>There are a fair amount of other improvements I'd like to make, namely:</p>
+<ul>
+<li>tree shaking of fontawesome because it's so beeg</li>
+<li>integration of Github issues for comments instead of Disqus</li>
+<li>integrate <a href="https://plausible.io/">plausible.io</a> for web analytics (privacy friendly compared to Google analytics)</li>
+<li>figure out how to integrate <a href="https://github.com/gnab/remark">remark</a> presentations</li>
+<li>GPT-3 automated blogging for when I'm feeling lazy</li>
+</ul>
         </section>
 
         <br><br><br>
