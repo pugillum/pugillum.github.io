@@ -175,11 +175,9 @@ This is an article I once wrote to demonstrate Pelican setup
    <code>git clone --recursive https://github.com/getpelican/pelican-themes themes</code></p>
 </li>
 <li>
-<p>In the <code>pelicanconf.py</code> file add:</br></p>
+<p>In the <code>pelicanconf.py</code> file add:</br>
+   <code>THEME = 'themes/[Name of a theme that looks good]'</code></p>
 </li>
-</ol>
-<p><code>THEME = 'themes/[Name of a theme that looks good]'</code></p>
-<ol>
 <li>
 <p>Run <code>make devserver</code>. </p>
 </li>
@@ -204,7 +202,7 @@ This is an article I once wrote to demonstrate Pelican setup
 <p>add a <code>favicon.ico</code> file in the <code>content/images</code> folder will ensure it's available in the <code>output</code> folder but linking to it is dependent on the theme. For some one can add a reference to it in the <code>pelicanconf.py</code> file.</p>
 </li>
 <li>
-<p>to ensure correct relative URLs, I had to specify the following in <code>pelicanconf.py</code>:</br>
+<p>to ensure correct relative URLs for local development, I had to specify the following in <code>pelicanconf.py</code>:</br>
   <code>SITEURL = 'http://127.0.0.1:8000'</code></p>
 </li>
 <li>
