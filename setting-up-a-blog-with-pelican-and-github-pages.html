@@ -18,13 +18,13 @@
 
     <meta property="og:type" content="article" />
     <meta property="og:title" content="Setting up a blog with Pelican and Github Pages" />
-    <meta property="og:description" content="This is about how this blog was setup using Pelican and Github Pages. I anticipate refining this process so will …" />
+    <meta property="og:description" content="This is about how this blog was setup using Pelican and Github Pages. I&#39;ll continue to refine." />
     <meta property="og:site_name" content="Pugillum" />
     <meta property="og:url" content="https://www.pugillum.com/setting-up-a-blog-with-pelican-and-github-pages.html" />
 
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Setting up a blog with Pelican and Github Pages">
-    <meta name="twitter:description" content="This is about how this blog was setup using Pelican and Github Pages. I anticipate refining this process so will …">
+    <meta name="twitter:description" content="This is about how this blog was setup using Pelican and Github Pages. I&#39;ll continue to refine.">
     <meta name="twitter:url" content="https://www.pugillum.com/setting-up-a-blog-with-pelican-and-github-pages.html">
 
     <!-- Feed -->
@@ -80,6 +80,9 @@
                 <span class="w3-tag w3-light-grey w3-text-blue w3-hover-blue">
                     <a href="https://www.pugillum.com/tag/blog.html" title="All articles with Blog tag">#blog</a>
                 </span>
+                <span class="w3-tag w3-light-grey w3-text-blue w3-hover-blue">
+                    <a href="https://www.pugillum.com/tag/github-pages.html" title="All articles with Github Pages tag">#github pages</a>
+                </span>
             </div>
         </div>
     </header>
@@ -89,8 +92,7 @@
 
     <div class="col-main w3-container">
         <section id="content">
-            <p><img alt="image-20210411154804143" src="images/2021-04-10_this_blog/image-20210411154804143.png"></p>
-<p>This is about how this blog was setup using Pelican and Github Pages. I anticipate refining this process so will keep this page updated with any future improvements.</p>
+            <p>This is about how this blog was setup using Pelican and Github Pages. I anticipate refining this process so will keep this page updated with any future improvements.</p>
 <h2>About the tech choice:</h2>
 <h3>Why <a href="https://pages.github.com/">Github Pages</a>?</h3>
 <ul>
@@ -146,6 +148,7 @@
 <div class="highlight"><pre><span></span><code>Title: This is my article
 Date: 2020-12-03 10:20
 Category: bla
+Summary: This is an article about Pelican
 
 This is an article I once wrote to demonstrate Pelican setup
 </code></pre></div>
@@ -207,6 +210,11 @@ This is an article I once wrote to demonstrate Pelican setup
 </li>
 <li>
 <p>What I haven't really covered here is the structuring of your files in content and things like the use of tags and categories.  I advise reading up on these in the documentation</p>
+</li>
+<li>
+<p>You can mark an article as draft by adding:
+  <code>Status: draft</code>
+  in the header.  This will ensure that it's not displayed on the main page but can be reviewed by another person.  More info can be found <a href="https://docs.getpelican.com/en/3.6.3/content.html#publishing-drafts">here</a></p>
 </li>
 </ul>
 <h2>Publishing</h2>
