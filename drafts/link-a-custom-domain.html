@@ -92,7 +92,32 @@
 
     <div class="col-main w3-container">
         <section id="content">
-            <p>When you first set</p>
+            <p>When you first setup a site using Github pages your site URL will be something like [bla bla].github.io.  You may want to purchase and link your URL.  This is about the process of doing that, though there is also documentation available from Github <a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site">here</a></p>
+<p>Provisional structure:
+- requesting a URL from Porkbun
+    - reasonable price
+    - renewal</p>
+<ul>
+<li>
+<p>configuring URL mapping in Porkbun [https://kb.porkbun.com/article/85-how-to-connect-your-root-domain-when-your-web-host-wont-provide-an-ip-address]</p>
+</li>
+<li>
+<p>Github settings</p>
+<ul>
+<li>waiting before turning on DNS</li>
+</ul>
+</li>
+<li>
+<p>Adjustment to publish to change URL in publishconf.py</p>
+</li>
+<li>
+<p>sort out the git thing</p>
+</li>
+<li>
+<p>Including CNAME
+    <code>STATIC_PATHS = ['images', 'extra/CNAME']</code></p>
+</li>
+</ul>
 <h1>Important</h1>
 <p>If your links in your publish are pugillum.github.io you'll need to change them
 You can't enable HTTPS straight away</p>
