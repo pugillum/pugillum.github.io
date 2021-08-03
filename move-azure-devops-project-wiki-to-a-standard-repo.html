@@ -185,11 +185,9 @@
 <p>Add a Collection and a Request</p>
 </li>
 <li>
-<p>Set the URL to</p>
+<p>Set the URL to
+   <code>https://dev.azure.com/{Organization}/{Project}/_apis/wiki/wikis?api-version=6.0</code></p>
 </li>
-</ol>
-<p><code>https://dev.azure.com/{Organization}/{Project}/_apis/wiki/wikis?api-version=6.0</code></p>
-<ol>
 <li>
 <p>Select the <code>Authorization</code> tab, select Type <code>Basic Auth</code> and set the Password to the PAT
    <img alt="image-20210803211150456" src="images/2021_08_03_How_to_move_AD_wiki/image-20210803211150456.png"></p>
@@ -202,35 +200,35 @@
 <p>Create a new request</p>
 </li>
 <li>
-<p>Change the method from GET to DELETE and set the URL to the following where <code>repositoryId</code> should be the ID of the wiki noted above.</p>
+<p>Change the method from GET to DELETE and set the URL to the following where <code>repositoryId</code> should be the ID of the wiki noted above.
+   <code>https://dev.azure.com/{Organization}/{Project}/_apis/git/repositories/{repositoryId}?api-version=6.0</code></p>
 </li>
-</ol>
-<p><code>https://dev.azure.com/{Organization}/{Project}/_apis/git/repositories/{repositoryId}?api-version=6.0</code></p>
-<ol>
-<li>Select Authorization and ensure the Type and Password are the same as for the previous request.</li>
+<li>
+<p>Select Authorization and ensure the Type and Password are the same as for the previous request.</p>
+</li>
 <li>Select Send.</li>
 <li>Rerun the GET request and ensure that there is now only one wiki.</li>
 </ol>
 <h3>(Advanced) Delete the Project Wiki with curl</h3>
 <p>This assumes you have <code>jq</code> installed for formatting the JSON</p>
 <ol>
-<li>List the wikis of the project using the following curl command</li>
-</ol>
-<p><code>bash
+<li>
+<p>List the wikis of the project using the following curl command
+   <code>bash
    curl -u :{Personal Access Token} --location --request GET 'https://dev.azure.com/{Organization}/{Project}/_apis/wiki/wikis?api-version=6.0' | jq</code></p>
-<ol>
+</li>
 <li>
 <p>Note down the ID of the wiki
    <img alt="image-20210803212831262" src="images/2021_08_03_How_to_move_AD_wiki/image-20210803212831262.png"></p>
 </li>
 <li>
-<p>Delete the wiki repository using the following curl command</p>
-</li>
-</ol>
-<p><code>bash
+<p>Delete the wiki repository using the following curl command
+   <code>bash
    curl -u :{Personal Access Token} --location --request DELETE 'https://dev.azure.com/{Organization}/{Project}/_apis/git/repositories/{Wiki ID}?api-version=6.0'</code></p>
-<ol>
-<li>Rerun the GET request and ensure that there is only one wiki.</li>
+</li>
+<li>
+<p>Rerun the GET request and ensure that there is only one wiki.</p>
+</li>
 </ol>
         </section>
 
