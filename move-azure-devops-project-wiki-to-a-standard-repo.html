@@ -109,11 +109,9 @@
 <p>Select <code>Repos</code>-&gt; <code>Files</code></p>
 </li>
 <li>
-<p>Select the drop-down next to the Repo name and select <code>Import repository</code></p>
+<p>Select the drop-down next to the Repo name and select <code>Import repository</code>
+   <img alt="image-20210803200914383" src="images/2021_08_03_How_to_move_AD_wiki/image-20210803200914383.png"></p>
 </li>
-</ol>
-<p><img alt="image-20210803200914383" src="images/2021_08_03_How_to_move_AD_wiki/image-20210803200914383.png"></p>
-<ol>
 <li>
 <p>Return to the previous tab and in the <code>Clone repository</code> popup, copy the HTTPS URL. This should be used as the <code>Clone URL</code> value.</p>
 </li>
@@ -124,12 +122,12 @@
 <p>The name can be changed but it's recommended to shift to snake_case (e.g. myproject_wiki)</p>
 </li>
 <li>
-<p>The result should look like below</p>
+<p>The result should look like below
+   <img alt="image-20210803201525197" src="images/2021_08_03_How_to_move_AD_wiki/image-20210803201525197.png"></p>
 </li>
-</ol>
-<p><img alt="image-20210803201525197" src="images/2021_08_03_How_to_move_AD_wiki/image-20210803201525197.png"></p>
-<ol>
-<li>Select <code>Import</code> and wait until the repo has been created.</li>
+<li>
+<p>Select <code>Import</code> and wait until the repo has been created.</p>
+</li>
 </ol>
 <h2>2. Create a wiki from this code</h2>
 <ol>
@@ -137,49 +135,45 @@
 <p>Return to the first tab and close the pop-up.</p>
 </li>
 <li>
-<p>Select the drop-down next to the wiki name and select <code>Publish code as wiki</code></p>
+<p>Select the drop-down next to the wiki name and select <code>Publish code as wiki</code>
+   <img alt="image-20210803202111621" src="images/2021_08_03_How_to_move_AD_wiki/image-20210803202111621.png"></p>
 </li>
-</ol>
-<p><img alt="image-20210803202111621" src="images/2021_08_03_How_to_move_AD_wiki/image-20210803202111621.png"></p>
-<ol>
 <li>
 <p>Ensure the new wiki repo is selected as well as the main branch (likely <code>wikiMaster</code>)</p>
 </li>
 <li>
-<p>In folder fill in <code>/</code> and fill in a name</p>
+<p>In folder fill in <code>/</code> and fill in a name
+   <img alt="image-20210803202306642" src="images/2021_08_03_How_to_move_AD_wiki/image-20210803202306642.png"></p>
 </li>
-</ol>
-<p><img alt="image-20210803202306642" src="images/2021_08_03_How_to_move_AD_wiki/image-20210803202306642.png"></p>
-<ol>
 <li>
 <p>Select <code>Publish</code></p>
 </li>
 <li>
-<p>Congrats! You have a new wiki! 🎉 </p>
+<p>Congrats! You have a new wiki! 🎉 
+   <img alt="image-20210803202434196" src="images/2021_08_03_How_to_move_AD_wiki/image-20210803202434196.png"></p>
 </li>
-</ol>
-<p><img alt="image-20210803202434196" src="images/2021_08_03_How_to_move_AD_wiki/image-20210803202434196.png"></p>
-<ol>
-<li>But!  There's now a duplicate wiki and the default will always be the project wiki. 😞 This is the reason for the next section.</li>
+<li>
+<p>But!  There's now a duplicate wiki and the default will always be the project wiki. 😞 This is the reason for the next section.</p>
+</li>
 </ol>
 <h2>3. Remove the project wiki</h2>
 <p>Unfortunately there is no way to remove the project wiki via the user interface.  The removal needs to be done as an API call.  And the API call needs to be done with authorization.  </p>
 <h3>Get a Personal Access Token (PAT)</h3>
 <ol>
-<li>Select the <code>User Settings</code> icon and then <code>Personal access tokens</code></li>
-</ol>
-<p><img alt="image-20210803204808152" src="images/2021_08_03_How_to_move_AD_wiki/image-20210803204808152.png"></p>
-<ol>
+<li>
+<p>Select the <code>User Settings</code> icon and then <code>Personal access tokens</code>
+<img alt="image-20210803204808152" src="images/2021_08_03_How_to_move_AD_wiki/image-20210803204808152.png"></p>
+</li>
 <li>
 <p>Select to add a new token</p>
 </li>
 <li>
-<p>Give the token <code>Full access</code> but limit the Expiration to a single day (you can also remove the PAT after the project wiki has been removed)</p>
+<p>Give the token <code>Full access</code> but limit the Expiration to a single day (you can also remove the PAT after the project wiki has been removed)
+   <img alt="image-20210803205251489" src="images/2021_08_03_How_to_move_AD_wiki/image-20210803205251489.png"></p>
 </li>
-</ol>
-<p><img alt="image-20210803205251489" src="images/2021_08_03_How_to_move_AD_wiki/image-20210803205251489.png"></p>
-<ol>
-<li>Keep the token in an accessible (and safe) place</li>
+<li>
+<p>Keep the token in an accessible (and safe) place</p>
+</li>
 </ol>
 <h3>Delete the Project Wiki with Postman</h3>
 <p>Note: If you prefer using <code>curl</code> check the next section.</p>
@@ -196,14 +190,14 @@
 </ol>
 <p><code>https://dev.azure.com/{Organization}/{Project}/_apis/wiki/wikis?api-version=6.0</code></p>
 <ol>
-<li>Select the <code>Authorization</code> tab, select Type <code>Basic Auth</code> and set the Password to the PAT</li>
-</ol>
-<p><img alt="image-20210803211150456" src="images/2021_08_03_How_to_move_AD_wiki/image-20210803211150456.png"></p>
-<ol>
-<li>Send the request.  The response should contain a list of two Wikis.  Determine which one is the Project wiki and note down the ID of the wiki.</li>
-</ol>
-<p><img alt="image-20210803211347715" src="images/2021_08_03_How_to_move_AD_wiki/image-20210803211347715.png"></p>
-<ol>
+<li>
+<p>Select the <code>Authorization</code> tab, select Type <code>Basic Auth</code> and set the Password to the PAT
+   <img alt="image-20210803211150456" src="images/2021_08_03_How_to_move_AD_wiki/image-20210803211150456.png"></p>
+</li>
+<li>
+<p>Send the request.  The response should contain a list of two Wikis.  Determine which one is the Project wiki and note down the ID of the wiki.
+   <img alt="image-20210803211347715" src="images/2021_08_03_How_to_move_AD_wiki/image-20210803211347715.png"></p>
+</li>
 <li>
 <p>Create a new request</p>
 </li>
@@ -225,11 +219,13 @@
 <p><code>bash
    curl -u :{Personal Access Token} --location --request GET 'https://dev.azure.com/{Organization}/{Project}/_apis/wiki/wikis?api-version=6.0' | jq</code></p>
 <ol>
-<li>Note down the ID of the wiki</li>
-</ol>
-<p><img alt="image-20210803212831262" src="images/2021_08_03_How_to_move_AD_wiki/image-20210803212831262.png"></p>
-<ol>
-<li>Delete the wiki repository using the following curl command</li>
+<li>
+<p>Note down the ID of the wiki
+   <img alt="image-20210803212831262" src="images/2021_08_03_How_to_move_AD_wiki/image-20210803212831262.png"></p>
+</li>
+<li>
+<p>Delete the wiki repository using the following curl command</p>
+</li>
 </ol>
 <p><code>bash
    curl -u :{Personal Access Token} --location --request DELETE 'https://dev.azure.com/{Organization}/{Project}/_apis/git/repositories/{Wiki ID}?api-version=6.0'</code></p>
