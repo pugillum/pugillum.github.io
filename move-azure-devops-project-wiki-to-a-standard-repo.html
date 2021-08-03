@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Move Azure DevOps project wiki to a standard repo &ndash; Pugillum</title>
+
+    <!-- Meta -->
+    <meta name="description" content="Pugillum &ndash; ">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Social -->
+    <meta property="article:author" content="Travis Dent" />
+    <meta property="article:section" content="general" />
+    <meta property="article:published_time" content=" 2021-08-03" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Move Azure DevOps project wiki to a standard repo" />
+    <meta property="og:description" content="How to shift an Azure DevOps project wiki to a standard repo" />
+    <meta property="og:site_name" content="Pugillum" />
+    <meta property="og:url" content="https://www.pugillum.com/move-azure-devops-project-wiki-to-a-standard-repo.html" />
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Move Azure DevOps project wiki to a standard repo">
+    <meta name="twitter:description" content="How to shift an Azure DevOps project wiki to a standard repo">
+    <meta name="twitter:url" content="https://www.pugillum.com/move-azure-devops-project-wiki-to-a-standard-repo.html">
+
+    <!-- Feed -->
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:regular,bold">
+    <link rel="stylesheet" type="text/css" href="https://www.pugillum.com/theme/css/w3.css">
+    <link rel="stylesheet" type="text/css" href="https://www.pugillum.com/theme/css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://www.pugillum.com/theme/css/jqcloud.css">
+    <link rel="stylesheet" type="text/css" href="https://www.pugillum.com/theme/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://www.pugillum.com/theme/css/pygments-highlight-github.css">
+
+    <!-- Icon -->
+    <link rel="shortcut icon" type="image/x-icon" href="https://www.pugillum.com/images/favicon.ico">
+
+    <!-- JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://www.pugillum.com/theme/js/jqcloud.min.js"></script>
+</head>
+
+<body>
+    <div class="w3-row w3-card w3-white">
+        <header id="header">
+            <a href="https://www.pugillum.com" id="header-logo" title="Home">TD</a>
+            <nav id="header-menu">
+                <ul>
+                        <li class="w3-bottombar w3-border-white w3-hover-border-blue" ><a href="https://www.pugillum.com/category/dev.html">dev</a>
+                        </li>
+                        <li class="w3-bottombar w3-border-white w3-hover-border-blue" style="font-weight: bold;" ><a href="https://www.pugillum.com/category/general.html">general</a>
+                        </li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+
+
+<br><br><br>
+
+<article>
+    <header class="w3-container col-main">
+        <h1>Move Azure DevOps project wiki to a standard repo</h1>
+        <div class="post-info">
+            <div class="w3-opacity w3-margin-right w3-margin-bottom" style="flex-grow: 1;">
+                <span><time datetime="2021-08-03T13:37:00+02:00">Tue 03 August 2021</time> in <a
+                        href="https://www.pugillum.com/category/general.html"
+                        title="All articles in category general">general</a></span>
+            </div>
+            <div>
+                <span class="w3-tag w3-light-grey w3-text-blue w3-hover-blue">
+                    <a href="https://www.pugillum.com/tag/how-to.html" title="All articles with How-To tag">#how-to</a>
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <br>
+
+
+    <div class="col-main w3-container">
+        <section id="content">
+            <p>Azure DevOps has a nice feature allowing teams to create a wiki within an Azure DevOps project.  Functionality to publish code as a wiki was added later.  The project wiki is likely backed with a git repo but that repo isn't accessible.  This post is about how to shift the project wiki to a code-backed wiki, allowing one to maintain the wiki as code allowing branches, pull requests and other git goodness.</p>
+<p>There are essentially 3 steps:</p>
+<ol>
+<li>Create a repo from the existing wiki code</li>
+<li>Create a wiki from this code</li>
+<li>Remove the project wiki</li>
+</ol>
+<h2>1. Create a repo from the existing wiki code</h2>
+<ol>
+<li>Select the button next to the wiki title and select <code>Clone wiki</code></li>
+</ol>
+<p><img alt="image-20210803200321393" src="images/2021_08_03_How_to_move_AD_wiki/image-20210803200321393.png"></p>
+<ol>
+<li>
+<p>In the pop-up select <code>Generate Git credentials</code> which will make a User Name and Password available.  Keep these details open for future steps.</p>
+</li>
+<li>
+<p>In a new tab, open the same Azure DevOps project</p>
+</li>
+<li>
+<p>Select <code>Repos</code>-&gt; <code>Files</code></p>
+</li>
+<li>
+<p>Select the drop-down next to the Repo name and select <code>Import repository</code></p>
+</li>
+</ol>
+<p><img alt="image-20210803200914383" src="images/2021_08_03_How_to_move_AD_wiki/image-20210803200914383.png"></p>
+<ol>
+<li>
+<p>Return to the previous tab and in the <code>Clone repository</code> popup, copy the HTTPS URL. This should be used as the <code>Clone URL</code> value.</p>
+</li>
+<li>
+<p>Once you've pasted this into the <code>Import a Git repository</code> dialog, you'll also need to copy across the user name and password.</p>
+</li>
+<li>
+<p>The name can be changed but it's recommended to shift to snake_case (e.g. myproject_wiki)</p>
+</li>
+<li>
+<p>The result should look like below</p>
+</li>
+</ol>
+<p><img alt="image-20210803201525197" src="images/2021_08_03_How_to_move_AD_wiki/image-20210803201525197.png"></p>
+<ol>
+<li>Select <code>Import</code> and wait until the repo has been created.</li>
+</ol>
+<h2>2. Create a wiki from this code</h2>
+<ol>
+<li>
+<p>Return to the first tab and close the pop-up.</p>
+</li>
+<li>
+<p>Select the drop-down next to the wiki name and select <code>Publish code as wiki</code></p>
+</li>
+</ol>
+<p><img alt="image-20210803202111621" src="images/2021_08_03_How_to_move_AD_wiki/image-20210803202111621.png"></p>
+<ol>
+<li>
+<p>Ensure the new wiki repo is selected as well as the main branch (likely <code>wikiMaster</code>)</p>
+</li>
+<li>
+<p>In folder fill in <code>/</code> and fill in a name</p>
+</li>
+</ol>
+<p><img alt="image-20210803202306642" src="images/2021_08_03_How_to_move_AD_wiki/image-20210803202306642.png"></p>
+<ol>
+<li>
+<p>Select <code>Publish</code></p>
+</li>
+<li>
+<p>Congrats! You have a new wiki! 🎉 </p>
+</li>
+</ol>
+<p><img alt="image-20210803202434196" src="images/2021_08_03_How_to_move_AD_wiki/image-20210803202434196.png"></p>
+<ol>
+<li>But!  There's now a duplicate wiki and the default will always be the project wiki. 😞 This is the reason for the next section.</li>
+</ol>
+<h2>3. Remove the project wiki</h2>
+<p>Unfortunately there is no way to remove the project wiki via the user interface.  The removal needs to be done as an API call.  And the API call needs to be done with authorization.  </p>
+<h3>Get a Personal Access Token (PAT)</h3>
+<ol>
+<li>Select the <code>User Settings</code> icon and then <code>Personal access tokens</code></li>
+</ol>
+<p><img alt="image-20210803204808152" src="images/2021_08_03_How_to_move_AD_wiki/image-20210803204808152.png"></p>
+<ol>
+<li>
+<p>Select to add a new token</p>
+</li>
+<li>
+<p>Give the token <code>Full access</code> but limit the Expiration to a single day (you can also remove the PAT after the project wiki has been removed)</p>
+</li>
+</ol>
+<p><img alt="image-20210803205251489" src="images/2021_08_03_How_to_move_AD_wiki/image-20210803205251489.png"></p>
+<ol>
+<li>Keep the token in an accessible (and safe) place</li>
+</ol>
+<h3>Delete the Project Wiki with Postman</h3>
+<p>Note: If you prefer using <code>curl</code> check the next section.</p>
+<ol>
+<li>
+<p>Install Postman</p>
+</li>
+<li>
+<p>Add a Collection and a Request</p>
+</li>
+<li>
+<p>Set the URL to</p>
+</li>
+</ol>
+<p><code>https://dev.azure.com/{Organization}/{Project}/_apis/wiki/wikis?api-version=6.0</code></p>
+<ol>
+<li>Select the <code>Authorization</code> tab, select Type <code>Basic Auth</code> and set the Password to the PAT</li>
+</ol>
+<p><img alt="image-20210803211150456" src="images/2021_08_03_How_to_move_AD_wiki/image-20210803211150456.png"></p>
+<ol>
+<li>Send the request.  The response should contain a list of two Wikis.  Determine which one is the Project wiki and note down the ID of the wiki.</li>
+</ol>
+<p><img alt="image-20210803211347715" src="images/2021_08_03_How_to_move_AD_wiki/image-20210803211347715.png"></p>
+<ol>
+<li>
+<p>Create a new request</p>
+</li>
+<li>
+<p>Change the method from GET to DELETE and set the URL to the following where <code>repositoryId</code> should be the ID of the wiki noted above.</p>
+</li>
+</ol>
+<p><code>https://dev.azure.com/{Organization}/{Project}/_apis/git/repositories/{repositoryId}?api-version=6.0</code></p>
+<ol>
+<li>Select Authorization and ensure the Type and Password are the same as for the previous request.</li>
+<li>Select Send.</li>
+<li>Rerun the GET request and ensure that there is now only one wiki.</li>
+</ol>
+<h3>(Advanced) Delete the Project Wiki with curl</h3>
+<p>This assumes you have <code>jq</code> installed for formatting the JSON</p>
+<ol>
+<li>List the wikis of the project using the following curl command</li>
+</ol>
+<p><code>bash
+   curl -u :{Personal Access Token} --location --request GET 'https://dev.azure.com/{Organization}/{Project}/_apis/wiki/wikis?api-version=6.0' | jq</code></p>
+<ol>
+<li>Note down the ID of the wiki</li>
+</ol>
+<p><img alt="image-20210803212831262" src="images/2021_08_03_How_to_move_AD_wiki/image-20210803212831262.png"></p>
+<ol>
+<li>Delete the wiki repository using the following curl command</li>
+</ol>
+<p><code>bash
+   curl -u :{Personal Access Token} --location --request DELETE 'https://dev.azure.com/{Organization}/{Project}/_apis/git/repositories/{Wiki ID}?api-version=6.0'</code></p>
+<ol>
+<li>Rerun the GET request and ensure that there is only one wiki.</li>
+</ol>
+        </section>
+
+        <br><br><br>
+
+        <footer>
+            <div class="adjust-width">
+                <div id="author-block" class="w3-light-grey w3-border">
+                    <div id="author-info">
+                        <a href="https://pugillum.github.io/"><img style="width: 60px; height: 60px;" src=""
+                                onerror="this.src='theme/images/avatar.png'" alt="Avatar"></a>
+                        <div style="margin-left: 20px; margin-top: 15px;">
+                            <a href="https://pugillum.github.io/"><span id="author-name" class="w3-hover-text-dark-grey">Travis Dent</span></a>
+                            <p id="author-story">Travis Dent - Machine Learning Engineer - Amsterdam</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br><br><br>
+
+
+
+        </footer>
+    </div>
+</article>
+
+
+    <footer id="footer">
+        <div id="footer-copyright" class="w3-center w3-small w3-text-grey w3-padding-48">
+            <span>&copy; 2021 Travis Dent </span>
+        </div>
+    </footer>
+
+
+
+</body>
+
+</html>
