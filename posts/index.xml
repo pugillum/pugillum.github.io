@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Travis Dent</title>
+    <link>https://pugillum.github.io/posts/</link>
+    <description>Recent content in Posts on Travis Dent</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 03 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://pugillum.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Move Azure DevOps project wiki to a standard repo</title>
+      <link>https://pugillum.github.io/posts/2021_08_03_how_to_move_azure_devops_wiki/</link>
+      <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://pugillum.github.io/posts/2021_08_03_how_to_move_azure_devops_wiki/</guid>
+      <description>How to shift an Azure DevOps project wiki to a standard repo</description>
+    </item>
+    
+    <item>
+      <title>About me</title>
+      <link>https://pugillum.github.io/posts/2021-04-10_about_me/</link>
+      <pubDate>Sat, 10 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://pugillum.github.io/posts/2021-04-10_about_me/</guid>
+      <description>So who is this baldy beardy guy?</description>
+    </item>
+    
+  </channel>
+</rss>
