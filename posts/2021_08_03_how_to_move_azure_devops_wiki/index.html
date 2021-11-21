@@ -17,7 +17,7 @@
 <link rel=mask-icon href=https://pugillum.github.io/safari-pinned-tab.svg>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.87.0">
+<meta name=generator content="Hugo 0.89.4">
 <meta property="og:title" content="Move Azure DevOps project wiki to a standard repo">
 <meta property="og:description" content="How to shift an Azure DevOps project wiki to a standard repo">
 <meta property="og:type" content="article">
@@ -177,7 +177,7 @@ Move Azure DevOps project wiki to a standard repo
 </li>
 <li>
 <p>Set the URL to</p>
-<pre><code>https://dev.azure.com/{Organization}/{Project}/_apis/wiki/wikis?api-version=6.0
+<pre tabindex=0><code>https://dev.azure.com/{Organization}/{Project}/_apis/wiki/wikis?api-version=6.0
 </code></pre></li>
 <li>
 <p>Select the <code>Authorization</code> tab, select Type <code>Basic Auth</code> and set the Password to the PAT
@@ -194,7 +194,7 @@ Move Azure DevOps project wiki to a standard repo
 </li>
 <li>
 <p>Change the method from GET to DELETE and set the URL to the following where <code>repositoryId</code> should be the ID of the wiki noted above.</p>
-<pre><code>https://dev.azure.com/{Organization}/{Project}/_apis/git/repositories/{repositoryId}?api-version=6.0
+<pre tabindex=0><code>https://dev.azure.com/{Organization}/{Project}/_apis/git/repositories/{repositoryId}?api-version=6.0
 </code></pre></li>
 <li>
 <p>Select Authorization and ensure the Type and Password are the same as for the previous request.</p>
