@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>blog on Travis Dent</title>
+    <link>https://pugillum.github.io/tags/blog/</link>
+    <description>Recent content in blog on Travis Dent</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 28 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://pugillum.github.io/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Add comments to your Hugo blog linked to Github issues with utterances</title>
+      <link>https://pugillum.github.io/posts/2021_11_28_github_issues_as_comments/</link>
+      <pubDate>Sun, 28 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://pugillum.github.io/posts/2021_11_28_github_issues_as_comments/</guid>
+      <description>Disqus sucks and most tech folk have a Github account so how about using Github issues to support comments.</description>
+    </item>
+    
+  </channel>
+</rss>

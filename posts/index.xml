@@ -7,6 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sun, 28 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://pugillum.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Add comments to your Hugo blog linked to Github issues with utterances</title>
+      <link>https://pugillum.github.io/posts/2021_11_28_github_issues_as_comments/</link>
+      <pubDate>Sun, 28 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://pugillum.github.io/posts/2021_11_28_github_issues_as_comments/</guid>
+      <description>Disqus sucks and most tech folk have a Github account so how about using Github issues to support comments.</description>
+    </item>
+    
+    <item>
       <title>All you need for your documentation is VS Code, Markdown and draw.io</title>
       <link>https://pugillum.github.io/posts/2021_11_28_drawio_in_markdown/</link>
       <pubDate>Sun, 28 Nov 2021 00:00:00 +0000</pubDate>
