@@ -5,7 +5,16 @@
     <link>https://pugillum.github.io/categories/dev/</link>
     <description>Recent content in dev on Travis Dent</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 03 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://pugillum.github.io/categories/dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://pugillum.github.io/categories/dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>All you need for your documentation is VS Code, markdown and drawio</title>
+      <link>https://pugillum.github.io/posts/2021_11_28_drawio_in_markdown/</link>
+      <pubDate>Sun, 28 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://pugillum.github.io/posts/2021_11_28_drawio_in_markdown/</guid>
+      <description>In modern software engineering contexts documentation should be light, descriptive and version controlled.  Here&amp;rsquo;s some free tools to support that paradigm.</description>
+    </item>
+    
     <item>
       <title>Move Azure DevOps project wiki to a standard repo</title>
       <link>https://pugillum.github.io/posts/2021_08_03_how_to_move_azure_devops_wiki/</link>
