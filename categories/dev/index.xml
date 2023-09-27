@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>dev on Travis Dent</title>
     <link>https://pugillum.github.io/categories/dev/</link>
     <description>Recent content in dev on Travis Dent</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
     <lastBuildDate>Sun, 28 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://pugillum.github.io/categories/dev/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Add comments to your Hugo blog linked to Github issues with utterances</title>
@@ -31,6 +32,15 @@
       
       <guid>https://pugillum.github.io/posts/2021_11_21_taking_prefect_for_a_ride/</guid>
       <description>Trying out an Airflow competitor: Prefect</description>
+    </item>
+    
+    <item>
+      <title>4 Data Scientists, 1 Engineer - what can go right?</title>
+      <link>https://pugillum.github.io/posts/2021_08_13_4_ds_1_eng.md/</link>
+      <pubDate>Fri, 13 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://pugillum.github.io/posts/2021_08_13_4_ds_1_eng.md/</guid>
+      <description>Some lessons learned getting a machine learning model in production</description>
     </item>
     
     <item>

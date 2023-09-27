@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>how-to on Travis Dent</title>
     <link>https://pugillum.github.io/tags/how-to/</link>
     <description>Recent content in how-to on Travis Dent</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
     <lastBuildDate>Tue, 03 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://pugillum.github.io/tags/how-to/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Move Azure DevOps project wiki to a standard repo</title>
