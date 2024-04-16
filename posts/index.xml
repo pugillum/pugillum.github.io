@@ -35,15 +35,6 @@
     </item>
     
     <item>
-      <title>4 Data Scientists, 1 Engineer - what can go right?</title>
-      <link>https://pugillum.github.io/posts/2021_08_13_4_ds_1_eng.md/</link>
-      <pubDate>Fri, 13 Aug 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://pugillum.github.io/posts/2021_08_13_4_ds_1_eng.md/</guid>
-      <description>Some lessons learned getting a machine learning model in production</description>
-    </item>
-    
-    <item>
       <title>Move Azure DevOps project wiki to a standard repo</title>
       <link>https://pugillum.github.io/posts/2021_08_03_how_to_move_azure_devops_wiki/</link>
       <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
