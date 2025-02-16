@@ -6,7 +6,16 @@
     <description>Recent content in Productivity on Travis Dent</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 28 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://pugillum.github.io/tags/productivity/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 16 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://pugillum.github.io/tags/productivity/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>🧑‍💻 The Lazy Man&#39;s Guide for Macbook Setup</title>
+      <link>https://pugillum.github.io/posts/2025_02_16_lazy_mans_mac_setup/</link>
+      <pubDate>Sun, 16 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://pugillum.github.io/posts/2025_02_16_lazy_mans_mac_setup/</guid>
+      <description>Adjustments I like to make to a new Macbook and some of the thinking behind it</description>
+    </item>
+    
     <item>
       <title>✍️ All you need for your documentation is VS Code, Markdown and draw.io</title>
       <link>https://pugillum.github.io/posts/2021_11_28_drawio_in_markdown/</link>
